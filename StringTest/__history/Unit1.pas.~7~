@@ -1,0 +1,72 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Memo1: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    Label2: TLabel;
+    eSearchText: TEdit;
+    bSearch: TButton;
+    Label3: TLabel;
+    eReplaceText: TEdit;
+    bReplace: TButton;
+    procedure Memo1Change(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure bSearchClick(Sender: TObject);
+    procedure bReplaceClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.bReplaceClick(Sender: TObject);
+begin
+  Memo1.Lines.Text :=
+    StringReplace(Memo1.Lines.Text, eSearchText.Text, eReplaceText.Text, [rfIgnoreCase])
+end;
+
+procedure TForm1.bSearchClick(Sender: TObject);
+var number_pos: Integer;
+begin
+  number_pos := Pos(eSearchText.Text, Memo1.Lines.Text);
+
+  if number_pos = 0 then
+    ShowMessage('Искомый текст не найден!')
+  else
+    ShowMessage('Текст найден, позиция: ' + IntToStr(number_pos))
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Memo1.Lines.Text := AnsiUpperCase(Memo1.Lines.Text)
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Memo1.Lines.Text := AnsiLowerCase(Memo1.Lines.Text)
+end;
+
+procedure TForm1.Memo1Change(Sender: TObject);
+begin
+  Label1.Caption := 'Количество символов: ' +
+    IntToStr(Length(Memo1.Lines.Text))
+end;
+
+end.

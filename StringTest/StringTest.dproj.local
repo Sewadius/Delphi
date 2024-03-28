@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024.03.28 14:39:24.036,=C:\Users\Sewad\Delphi\Unit1.pas</Transaction>
+    <Transaction>2024.03.28 14:39:31.179,C:\Users\Sewad\Delphi\StringTest\Unit1.pas=C:\Users\Sewad\Delphi\Unit1.pas</Transaction>
+    <Transaction>2024.03.28 14:39:31.179,C:\Users\Sewad\Delphi\StringTest\Unit1.dfm=C:\Users\Sewad\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2024.03.28 14:39:39.813,C:\Users\Sewad\Delphi\StringTest\StringTest.dproj=C:\Users\Sewad\Delphi\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
