@@ -50,12 +50,7 @@ begin
   if number_pos = 0 then
     ShowMessage('Искомый текст не найден!')
   else
-  begin
-    ShowMessage('Текст найден, позиция: ' + IntToStr(number_pos));
-    Memo1.SetFocus;
-    Memo1.SelStart := number_pos - 1;
-    Memo1.SelLength := Length(eSearchText.Text)
-  end;
+    ShowMessage('Текст найден, позиция: ' + IntToStr(number_pos))
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
